@@ -1,238 +1,230 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { MapPin, Users, Award, Leaf, Target, Heart } from 'lucide-react';
+import { Shield, Users, Clock, Leaf, Award, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const APropos = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
   const values = [
     {
-      icon: Leaf,
-      title: "Durabilité",
-      description: "Nous nous engageons pour une énergie plus propre et des pratiques respectueuses de l'environnement"
+      icon: Shield,
+      title: "Qualité garantie",
+      description: "Fioul premium certifié avec contrôles qualité rigoureux selon les normes européennes",
+      highlight: "100% sûr",
+      gradient: "from-teal-50/80 to-cyan-50/80",
+      border: "border-teal-200/50",
+      accent: "bg-teal-600"
     },
     {
-      icon: Target,
-      title: "Excellence",
-      description: "Qualité irréprochable de nos produits et service client d'exception"
+      icon: Users,
+      title: "Service client",
+      description: "Plus de 100 000 clients satisfaits avec un support professionnel disponible 7j/7",
+      highlight: "100k+ clients",
+      gradient: "from-blue-50/80 to-indigo-50/80",
+      border: "border-blue-200/50",
+      accent: "bg-blue-600"
     },
     {
-      icon: Heart,
-      title: "Proximité",
-      description: "À l'écoute de nos clients avec un service personnalisé et humain"
+      icon: Clock,
+      title: "Livraison rapide",
+      description: "Livraison express dans toute la France sous 24-48h avec suivi en temps réel",
+      highlight: "24-48h",
+      gradient: "from-purple-50/80 to-violet-50/80",
+      border: "border-purple-200/50",
+      accent: "bg-purple-600"
     }
   ];
 
-  const milestones = [
-    { year: "2015", event: "Création de Green Energy Trade SAS" },
-    { year: "2017", event: "Lancement de Fioul Excellence" },
-    { year: "2019", event: "Couverture nationale complète" },
-    { year: "2021", event: "10 000 clients satisfaits" },
-    { year: "2023", event: "Certification ISO 14001" }
+  const commitments = [
+    {
+      icon: Leaf,
+      title: "Respect environnemental",
+      description: "Fioul à faible teneur en soufre pour réduire l'impact environnemental"
+    },
+    {
+      icon: Award,
+      title: "Certifications qualité",
+      description: "Respect des normes européennes les plus strictes"
+    },
+    {
+      icon: Heart,
+      title: "Satisfaction client",
+      description: "Notre priorité absolue depuis le début"
+    }
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold text-teal-600">
-              Fioul Excellence
-            </Link>
-            <div className="hidden md:flex space-x-6">
-              <Link to="/" className="text-gray-600 hover:text-teal-600 transition-colors">Accueil</Link>
-              <Link to="/produits" className="text-gray-600 hover:text-teal-600 transition-colors">Produits</Link>
-              <Link to="/livraison" className="text-gray-600 hover:text-teal-600 transition-colors">Livraison</Link>
-              <Link to="/a-propos" className="text-teal-600 font-semibold">À propos</Link>
-              <Link to="/contact" className="text-gray-600 hover:text-teal-600 transition-colors">Contact</Link>
-            </div>
+      <Navbar />
+      <div className="pt-16">
+        {/* Section 1: Hero - Qui sommes-nous ? */}
+        <section className="py-20 bg-gradient-to-br from-teal-50 via-white to-blue-50 relative overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-teal-200/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/10 rounded-full blur-3xl"></div>
           </div>
-        </div>
-      </nav>
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-teal-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-5xl font-bold text-gray-800 mb-6">
-              À propos de Fioul Excellence
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Votre partenaire de confiance pour l'approvisionnement en fioul domestique depuis 2015
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Company Info */}
-      <section ref={ref} className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Green Energy Trade SAS
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Fondée en 2015 par Claire Moreau, Green Energy Trade SAS est une entreprise française spécialisée 
-                dans la distribution de fioul domestique de haute qualité. Basée à Paris, notre société s'est 
-                rapidement imposée comme un acteur de référence dans le secteur énergétique français.
+              <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
+                Qui sommes-nous ?
+              </h1>
+              <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto mb-8">
+                Fioul Excellence est votre partenaire de confiance pour l'approvisionnement 
+                en fioul domestique partout en France depuis des années.
               </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Sous la marque Fioul Excellence, nous proposons des solutions énergétiques fiables et 
-                respectueuses de l'environnement, avec un service client d'exception et une logistique 
-                optimisée pour répondre aux besoins de nos clients partout en France.
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-12">
+                Nous nous engageons à vous fournir un fioul de qualité premium avec un service 
+                client exceptionnel et des délais de livraison respectés dans toute la France.
               </p>
-              <div className="flex items-center space-x-4 text-teal-600">
-                <MapPin className="w-6 h-6" />
-                <span className="text-lg font-medium">
-                  Siège social : 25 Avenue des Champs-Élysées, 75008 Paris
-                </span>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                <span>Obtenir un devis gratuit</span>
+              </Link>
             </motion.div>
+          </div>
+        </section>
 
+        {/* Section 2: Nos valeurs (Style WhyChooseUs) */}
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-teal-200/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/10 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
             >
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Notre dirigeante</h3>
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-12 h-12 text-white" />
-                </div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">Claire Moreau</h4>
-                <p className="text-teal-600 font-medium mb-4">Présidente & Fondatrice</p>
-                <p className="text-gray-600">
-                  Forte de plus de 15 ans d'expérience dans le secteur énergétique, 
-                  Claire Moreau a créé Green Energy Trade avec la vision d'une énergie 
-                  plus accessible et plus respectueuse de l'environnement.
-                </p>
-              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                Nos valeurs
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Ce qui nous distingue et fait notre réputation auprès de nos clients
+              </p>
             </motion.div>
-          </div>
-        </div>
-      </section>
 
-      {/* Vision & Mission */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Notre vision et nos valeurs
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Construire un avenir énergétique durable tout en garantissant le confort de nos clients
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg p-8 text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Notre histoire
-            </h2>
-            <p className="text-xl text-gray-600">
-              Depuis notre création, nous n'avons cessé de grandir et d'innover
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-              >
-                <div className={`bg-white rounded-xl shadow-lg p-6 max-w-md ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center">
-                      <Award className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-teal-600">{milestone.year}</div>
-                      <div className="text-gray-800">{milestone.event}</div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div 
+                    className={`relative overflow-hidden bg-gradient-to-br ${value.gradient} backdrop-blur-sm border-2 ${value.border} rounded-3xl p-8 text-center space-y-6 hover:shadow-2xl transition-all duration-300 h-full`}
+                  >
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className={`w-20 h-20 ${value.accent} rounded-2xl flex items-center justify-center mx-auto shadow-lg mb-6`}>
+                        <value.icon className="w-10 h-10 text-white" />
+                      </div>
+                      
+                      {/* Badge */}
+                      <div className={`inline-block ${value.accent} text-white px-4 py-2 rounded-full text-sm font-bold mb-4`}>
+                        {value.highlight}
+                      </div>
+                      
+                      {/* Title & Description */}
+                      <div className="space-y-3">
+                        <h3 className="text-2xl font-bold text-slate-900">
+                          {value.title}
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed">
+                          {value.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-teal-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
-              Rejoignez nos 10 000 clients satisfaits
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Découvrez pourquoi tant de familles nous font confiance pour leur chauffage
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+        {/* Section 3: Notre engagement (Compact) */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
             >
-              <span>Contactez-nous dès maintenant</span>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                Notre engagement
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Nous nous engageons chaque jour pour votre satisfaction et un service de qualité
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {commitments.map((commitment, index) => (
+                <motion.div
+                  key={commitment.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <commitment.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                    {commitment.title}
+                  </h3>
+                  <p className="text-slate-600">
+                    {commitment.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                Rejoignez nos 100 000+ clients satisfaits
+              </h3>
+              <p className="text-lg text-slate-600 mb-8">
+                Découvrez pourquoi tant de familles nous font confiance pour leur chauffage
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                <span>Contactez-nous dès maintenant</span>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        <Footer />
+      </div>
     </div>
   );
 };
