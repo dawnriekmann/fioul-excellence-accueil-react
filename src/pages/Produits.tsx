@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
@@ -6,6 +5,7 @@ import { useRef } from 'react';
 import { CheckCircle, Star, Fuel, Zap, Shield, Award, TruckIcon, Euro, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Produits = () => {
   const ref = useRef(null);
@@ -289,6 +289,7 @@ const Produits = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };
