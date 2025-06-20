@@ -41,23 +41,23 @@ const Benefits = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section ref={ref} className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
             Des avantages qui font la différence
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Profitez d'un service sur-mesure avec des bénéfices concrets pour votre budget et votre confort
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -67,13 +67,13 @@ const Benefits = () => {
               whileHover={{ y: -10, scale: 1.05 }}
               className="relative overflow-hidden"
             >
-              <div className={`bg-gradient-to-br ${benefit.color} rounded-2xl p-6 text-white h-full shadow-xl`}>
+              <div className={`bg-gradient-to-br ${benefit.color} rounded-2xl p-6 text-white h-full shadow-xl min-h-[250px] flex flex-col justify-center`}>
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="bg-white bg-opacity-20 rounded-full p-4">
-                    <benefit.icon className="w-8 h-8" />
+                    <benefit.icon className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="text-xl font-bold">{benefit.title}</h3>
-                  <p className="text-sm opacity-90">{benefit.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold">{benefit.title}</h3>
+                  <p className="text-sm opacity-90 leading-relaxed">{benefit.description}</p>
                   <div className="bg-white bg-opacity-20 rounded-full px-4 py-2 text-sm font-semibold">
                     {benefit.stats}
                   </div>

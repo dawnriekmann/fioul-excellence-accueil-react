@@ -49,23 +49,23 @@ const Services = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-white">
+    <section ref={ref} className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
             Pourquoi choisir Fioul Excellence ?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Découvrez tous les avantages de notre service premium pour votre approvisionnement en fioul
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -75,11 +75,11 @@ const Services = () => {
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
             >
-              <div className={`w-16 h-16 rounded-full ${service.color} flex items-center justify-center mb-4`}>
-                <service.icon className="w-8 h-8" />
+              <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full ${service.color} flex items-center justify-center mb-4`}>
+                <service.icon className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
+              <p className="text-sm sm:text-base text-gray-600">{service.description}</p>
             </motion.div>
           ))}
         </div>
