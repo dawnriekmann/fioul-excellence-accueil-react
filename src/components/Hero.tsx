@@ -6,20 +6,20 @@ import PriceCalculator from './PriceCalculator';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-teal-50 to-blue-50 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-teal-50 to-blue-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-teal-500 rounded-full blur-xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500 rounded-full blur-xl"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-8 pb-16">
+      <div className="relative z-10 container mx-auto px-4 py-8 pb-4">
         {/* Header */}
         <motion.header 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-between items-center mb-16"
+          className="flex justify-between items-center mb-8"
         >
           <div className="flex items-center space-x-3">
             <Fuel className="w-8 h-8 text-teal-600" />
