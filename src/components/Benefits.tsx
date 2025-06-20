@@ -7,7 +7,7 @@ import { Euro, Truck, Smartphone, Award } from 'lucide-react';
 
 const Benefits = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const benefits = [
     {
