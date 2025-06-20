@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
@@ -14,7 +15,7 @@ const Produits = () => {
   const products = [
     {
       name: "Fioul Standard",
-      price: "0,68",
+      price: "0,70",
       description: "Fioul de qualité pour un usage quotidien",
       icon: Fuel,
       color: "from-blue-500 to-blue-600",
@@ -31,7 +32,7 @@ const Produits = () => {
     },
     {
       name: "Fioul Premium",
-      price: "0,72",
+      price: "0,73",
       description: "Notre meilleure qualité avec additifs",
       icon: Star,
       color: "from-teal-500 to-teal-600",
@@ -184,13 +185,15 @@ const Produits = () => {
                       </div>
 
                       {/* CTA Button */}
-                      <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`w-full py-4 bg-gradient-to-r ${product.popular ? 'from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700' : 'from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'} text-white font-bold rounded-xl transition-all duration-200 shadow-lg`}
-                      >
-                        Choisir ce fioul
-                      </motion.button>
+                      <Link to="/#hero">
+                        <motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className={`w-full py-4 bg-gradient-to-r ${product.popular ? 'from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700' : 'from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'} text-white font-bold rounded-xl transition-all duration-200 shadow-lg`}
+                        >
+                          Choisir ce fioul
+                        </motion.button>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
@@ -271,13 +274,15 @@ const Produits = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-center mt-16"
             >
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-12 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"
-              >
-                Calculer le prix maintenant
-              </motion.button>
+              <Link to="/#hero">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-12 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"
+                >
+                  Calculer le prix maintenant
+                </motion.button>
+              </Link>
               
               <div className="inline-flex items-center bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl px-6 py-4 text-slate-600 shadow-lg mt-8">
                 <Shield className="w-5 h-5 mr-3 text-teal-600" />

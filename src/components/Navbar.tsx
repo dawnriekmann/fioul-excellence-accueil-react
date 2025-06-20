@@ -27,7 +27,7 @@ const Navbar = () => {
             <img 
               src="https://i.imgur.com/07QFIbT.png" 
               alt="Fioul Excellence" 
-              className="h-10 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
 
