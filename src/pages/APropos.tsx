@@ -28,8 +28,8 @@ const APropos = () => {
     {
       icon: Clock,
       title: "Livraison rapide",
-      description: "Livraison express dans toute la France sous 24-48h avec suivi en temps réel",
-      highlight: "24-48h",
+      description: "Livraison express dans toute la France sous 2-4 jours avec suivi en temps réel",
+      highlight: "2-4 jours",
       gradient: "from-purple-50/80 to-violet-50/80",
       border: "border-purple-200/50",
       accent: "bg-purple-600"
