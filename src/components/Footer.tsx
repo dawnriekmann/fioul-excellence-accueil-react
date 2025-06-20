@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src="https://i.imgur.com/07QFIbT.png" 
                 alt="Fioul Excellence" 
-                className="h-16 w-auto"
+                className="h-24 w-auto"
               />
             </div>
             <p className="text-gray-400">

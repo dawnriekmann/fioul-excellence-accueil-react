@@ -21,18 +21,20 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/50 shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo */}
-          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <img 
-              src="https://i.imgur.com/07QFIbT.png" 
-              alt="Fioul Excellence" 
-              className="h-16 w-auto"
-            />
-          </Link>
+        <div className="flex items-center justify-between md:justify-start h-24">
+          {/* Logo - centered on mobile, left-aligned on desktop */}
+          <div className="flex-1 flex justify-center md:justify-start md:flex-none">
+            <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <img 
+                src="https://i.imgur.com/07QFIbT.png" 
+                alt="Fioul Excellence" 
+                className="h-24 w-auto"
+              />
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8 flex-1 justify-center">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -57,7 +59,7 @@ const Navbar = () => {
           </div>
 
           {/* Phone notification and Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 md:flex-none">
             {/* Phone notification button */}
             <motion.a
               href="tel:+33123456789"
