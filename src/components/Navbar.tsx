@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,15 +19,15 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/50 shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
             <img 
               src="https://i.imgur.com/07QFIbT.png" 
               alt="Fioul Excellence" 
-              className="h-20 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 
@@ -37,17 +37,17 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`relative px-4 py-3 text-sm font-semibold transition-all duration-300 rounded-lg ${
                   isActive(link.path)
-                    ? 'text-teal-600'
-                    : 'text-gray-700 hover:text-teal-600'
+                    ? 'text-teal-600 bg-teal-50'
+                    : 'text-gray-700 hover:text-teal-600 hover:bg-gray-50'
                 }`}
               >
                 {link.name}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-600"
+                    className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-teal-600 rounded-full"
                     initial={false}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -56,13 +56,30 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-700 hover:text-teal-600 transition-colors touch-target"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Phone notification and Mobile Menu */}
+          <div className="flex items-center space-x-4">
+            {/* Phone notification button */}
+            <motion.a
+              href="tel:+33123456789"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden sm:flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-200"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="text-sm font-semibold">01 23 45 67 89</span>
+              <div className="relative">
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+              </div>
+            </motion.a>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-3 text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-lg transition-all duration-200 touch-target"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -81,7 +98,7 @@ const Navbar = () => {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-4 text-base font-medium transition-colors duration-200 touch-target ${
+                    className={`block px-4 py-4 text-base font-medium transition-colors duration-200 touch-target rounded-lg mx-2 ${
                       isActive(link.path)
                         ? 'text-teal-600 bg-teal-50'
                         : 'text-gray-700 hover:text-teal-600 hover:bg-gray-50'
@@ -90,6 +107,16 @@ const Navbar = () => {
                     {link.name}
                   </Link>
                 ))}
+                
+                {/* Mobile phone button */}
+                <motion.a
+                  href="tel:+33123456789"
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-4 py-3 rounded-lg mx-2 mt-4 shadow-lg"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm font-semibold">01 23 45 67 89</span>
+                </motion.a>
               </div>
             </motion.div>
           )}
