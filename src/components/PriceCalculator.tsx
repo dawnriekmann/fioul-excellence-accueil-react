@@ -161,8 +161,8 @@ const PriceCalculator = () => {
         }} transition={{
           duration: 0.3
         }}>
-              {/* Savings highlight */}
-              <div className="bg-green-500 text-white rounded-lg p-3 text-center font-bold">
+              {/* Modern transparent savings notification */}
+              <div className="bg-green-50/80 backdrop-blur-sm border-2 border-green-200 text-green-700 rounded-xl p-4 text-center font-bold shadow-sm">
                 🎉 Vous économisez environ {savings}€ par rapport aux fournisseurs locaux !
               </div>
 
