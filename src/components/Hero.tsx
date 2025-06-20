@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Fuel, Shield, Truck, Star, Clock, CheckCircle } from 'lucide-react';
@@ -6,7 +5,7 @@ import PriceCalculator from './PriceCalculator';
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 py-12 lg:py-16">
+    <section id="hero" className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 py-12 lg:py-16">
       {/* Enhanced background elements for visual impact */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl"></div>
