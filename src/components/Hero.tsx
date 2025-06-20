@@ -51,30 +51,64 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Enhanced Feature Cards with conversion elements */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-lg mx-auto lg:max-w-none">
-              {[
-                { icon: Shield, text: "Qualité certifiée TÜV", color: "bg-blue-600", badge: "Garanti" },
-                { icon: Truck, text: "Livraison rapide", color: "bg-teal-600", badge: "2-4j" },
-                { icon: Fuel, text: "Meilleur prix garanti", color: "bg-orange-600", badge: "-15%" }
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-4 border border-gray-100 relative overflow-hidden"
-                >
-                  {/* Badge */}
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg">
-                    {feature.badge}
-                  </div>
-                  
-                  <div className="flex flex-col items-center space-y-3 pt-2">
-                    <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center shadow-lg`}>
-                      <feature.icon className="w-6 h-6 text-white" />
+            {/* Modern conversion-focused feature highlights */}
+            <div className="space-y-4 max-w-lg mx-auto lg:max-w-none">
+              {/* Quality guarantee with modern styling */}
+              <div className="group relative overflow-hidden bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-indigo-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-sm font-bold text-slate-800 text-center leading-tight">{feature.text}</span>
+                    <div>
+                      <div className="font-bold text-slate-900">Qualité certifiée TÜV</div>
+                      <div className="text-sm text-slate-600">Contrôlé selon les normes européennes</div>
+                    </div>
+                  </div>
+                  <div className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    GARANTI
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Fast delivery with modern styling */}
+              <div className="group relative overflow-hidden bg-gradient-to-r from-teal-50/80 to-emerald-50/80 backdrop-blur-sm border border-teal-200/50 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-100/20 to-emerald-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center">
+                      <Truck className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900">Livraison express</div>
+                      <div className="text-sm text-slate-600">Partout en France en 2-4 jours</div>
+                    </div>
+                  </div>
+                  <div className="bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    2-4J
+                  </div>
+                </div>
+              </div>
+
+              {/* Best price guarantee with modern styling */}
+              <div className="group relative overflow-hidden bg-gradient-to-r from-orange-50/80 to-red-50/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-100/20 to-red-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center">
+                      <Fuel className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900">Meilleur prix garanti</div>
+                      <div className="text-sm text-slate-600">Économies jusqu'à 15% garanties</div>
+                    </div>
+                  </div>
+                  <div className="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    -15%
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Trust elements */}
