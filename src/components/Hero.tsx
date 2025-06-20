@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Fuel, Shield, Truck, Phone } from 'lucide-react';
+import { Fuel, Shield, Truck } from 'lucide-react';
 import PriceCalculator from './PriceCalculator';
 
 const Hero = () => {
@@ -14,23 +14,6 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8 pb-4">
-        {/* Header */}
-        <motion.header 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-between items-center mb-8"
-        >
-          <div className="flex items-center space-x-3">
-            <Fuel className="w-8 h-8 text-teal-600" />
-            <h1 className="text-2xl font-bold text-gray-800">Fioul Excellence</h1>
-          </div>
-          <div className="flex items-center space-x-2 text-teal-600">
-            <Phone className="w-5 h-5" />
-            <span className="font-semibold">01 23 45 67 89</span>
-          </div>
-        </motion.header>
-
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
