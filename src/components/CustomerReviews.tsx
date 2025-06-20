@@ -6,31 +6,31 @@ import { Star, Quote, CheckCircle } from 'lucide-react';
 const CustomerReviews = () => {
   const testimonials = [
     {
-      name: "Maria Schmidt",
-      location: "München",
+      name: "Marie Dubois",
+      location: "Paris",
       rating: 5,
-      comment: "Fantastischer Service! Schnelle Lieferung und der Preis war unschlagbar. Kann ich nur weiterempfehlen!",
-      avatar: "MS",
+      comment: "Service fantastique ! Livraison rapide et le prix était imbattable. Je recommande vivement !",
+      avatar: "MD",
       savings: "280€",
       gradient: "from-blue-50/80 to-indigo-50/80",
       border: "border-blue-200/50"
     },
     {
-      name: "Thomas Weber",
-      location: "Hamburg", 
+      name: "Thomas Martin",
+      location: "Lyon", 
       rating: 5,
-      comment: "Sehr professionell und zuverlässig. Die Online-Bestellung war super einfach und die Qualität ist top!",
-      avatar: "TW",
+      comment: "Très professionnel et fiable. La commande en ligne était très simple et la qualité est au top !",
+      avatar: "TM",
       savings: "420€",
       gradient: "from-teal-50/80 to-cyan-50/80",
       border: "border-teal-200/50"
     },
     {
-      name: "Sandra Müller",
-      location: "Berlin",
+      name: "Sandra Petit",
+      location: "Marseille",
       rating: 5,
-      comment: "Bereits zum dritten Mal bestellt. Immer pünktlich, immer beste Qualität. Danke für den tollen Service!",
-      avatar: "SM",
+      comment: "Déjà commandé pour la troisième fois. Toujours ponctuel, toujours la meilleure qualité. Merci pour ce super service !",
+      avatar: "SP",
       savings: "350€",
       gradient: "from-purple-50/80 to-violet-50/80",
       border: "border-purple-200/50"
@@ -53,25 +53,25 @@ const CustomerReviews = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Kundenstimmen
+            Témoignages clients
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-            Über 100.000 zufriedene Kunden sprechen für sich
+            Plus de 100 000 clients satisfaits parlent pour nous
           </p>
           
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center items-center gap-8 text-sm">
             <div className="flex items-center bg-green-50/80 backdrop-blur-sm border border-green-200/50 rounded-2xl px-6 py-3">
               <Star className="w-5 h-5 text-yellow-500 fill-current mr-2" />
-              <span className="font-bold text-green-700">4.9/5 Sterne</span>
+              <span className="font-bold text-green-700">4,9/5 étoiles</span>
             </div>
             <div className="flex items-center bg-blue-50/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl px-6 py-3">
               <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
-              <span className="font-bold text-blue-700">100.000+ Kunden</span>
+              <span className="font-bold text-blue-700">100 000+ clients</span>
             </div>
             <div className="flex items-center bg-teal-50/80 backdrop-blur-sm border border-teal-200/50 rounded-2xl px-6 py-3">
               <CheckCircle className="w-5 h-5 text-teal-600 mr-2" />
-              <span className="font-bold text-teal-700">98% Weiterempfehlung</span>
+              <span className="font-bold text-teal-700">98% de recommandation</span>
             </div>
           </div>
         </motion.div>
@@ -113,7 +113,7 @@ const CustomerReviews = () => {
                       ))}
                     </div>
                     <div className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">
-                      -{testimonial.savings} gespart
+                      -{testimonial.savings} économisé
                     </div>
                   </div>
 
@@ -137,7 +137,7 @@ const CustomerReviews = () => {
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm border-2 border-teal-200/50 rounded-2xl px-8 py-4 text-slate-700 shadow-lg">
             <CheckCircle className="w-6 h-6 mr-3 text-teal-600" />
             <span className="font-bold text-lg">
-              Werden Sie unser nächster zufriedener Kunde!
+              Devenez notre prochain client satisfait !
             </span>
           </div>
         </motion.div>

@@ -7,36 +7,36 @@ const WhyChooseUs = () => {
   const features = [
     {
       icon: Euro,
-      title: "Bis zu 15% sparen",
-      description: "Garantiert günstigere Preise als bei lokalen Anbietern",
-      highlight: "Sofort sparen",
+      title: "Économisez jusqu'à 15%",
+      description: "Prix garantis moins chers que les fournisseurs locaux",
+      highlight: "Économies immédiates",
       gradient: "from-green-50/80 to-emerald-50/80",
       border: "border-green-200/50",
       accent: "bg-green-600"
     },
     {
       icon: Truck,
-      title: "Express-Lieferung",
-      description: "Schnelle Lieferung in ganz Deutschland binnen 2-4 Tagen",
-      highlight: "2-4 Tage",
+      title: "Livraison express",
+      description: "Livraison rapide dans toute la France sous 2-4 jours",
+      highlight: "2-4 jours",
       gradient: "from-blue-50/80 to-indigo-50/80",
       border: "border-blue-200/50",
       accent: "bg-blue-600"
     },
     {
       icon: Shield,
-      title: "TÜV-zertifiziert",
-      description: "Höchste Qualität nach europäischen Standards geprüft",
-      highlight: "100% sicher",
+      title: "Certifié TÜV",
+      description: "Qualité maximale contrôlée selon les normes européennes",
+      highlight: "100% sûr",
       gradient: "from-teal-50/80 to-cyan-50/80",
       border: "border-teal-200/50",
       accent: "bg-teal-600"
     },
     {
       icon: Clock,
-      title: "24/7 Service",
-      description: "Rund um die Uhr bestellen mit professionellem Support",
-      highlight: "Immer da",
+      title: "Service 24/7",
+      description: "Commandez 24h/24 avec un support professionnel",
+      highlight: "Toujours là",
       gradient: "from-purple-50/80 to-violet-50/80",
       border: "border-purple-200/50",
       accent: "bg-purple-600"
@@ -59,10 +59,10 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Warum uns wählen?
+            Pourquoi nous choisir ?
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Über 100.000 zufriedene Kunden vertrauen auf unsere Qualität und unseren Service
+            Plus de 100 000 clients satisfaits font confiance à notre qualité et notre service
           </p>
         </motion.div>
 

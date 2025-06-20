@@ -8,8 +8,8 @@ const HowItWorks = () => {
     {
       icon: Calculator,
       number: "1",
-      title: "Preis berechnen",
-      description: "Nutzen Sie unseren Online-Rechner für Ihr persönliches Angebot",
+      title: "Calculer le prix",
+      description: "Utilisez notre calculateur en ligne pour votre devis personnalisé",
       gradient: "from-blue-50/80 to-indigo-50/80",
       border: "border-blue-200/50",
       accent: "bg-blue-600"
@@ -17,8 +17,8 @@ const HowItWorks = () => {
     {
       icon: CreditCard,
       number: "2", 
-      title: "Sicher bestellen",
-      description: "Bestellen Sie online mit SSL-verschlüsselter Zahlung",
+      title: "Commander en sécurité",
+      description: "Commandez en ligne avec un paiement crypté SSL",
       gradient: "from-teal-50/80 to-emerald-50/80",
       border: "border-teal-200/50",
       accent: "bg-teal-600"
@@ -26,8 +26,8 @@ const HowItWorks = () => {
     {
       icon: Truck,
       number: "3",
-      title: "Lieferung erhalten",
-      description: "Express-Lieferung in 2-4 Tagen direkt zu Ihnen nach Hause",
+      title: "Recevoir la livraison",
+      description: "Livraison express en 2-4 jours directement chez vous",
       gradient: "from-green-50/80 to-lime-50/80",
       border: "border-green-200/50",
       accent: "bg-green-600"
@@ -50,10 +50,10 @@ const HowItWorks = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            So einfach geht's
+            Comment ça marche
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            In nur 3 Schritten zu Ihrem günstigen Heizöl
+            En seulement 3 étapes vers votre fioul pas cher
           </p>
         </motion.div>
 
@@ -114,7 +114,7 @@ const HowItWorks = () => {
             whileTap={{ scale: 0.98 }}
             className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-12 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"
           >
-            Jetzt Preis berechnen
+            Calculer le prix maintenant
           </motion.button>
         </motion.div>
       </div>
