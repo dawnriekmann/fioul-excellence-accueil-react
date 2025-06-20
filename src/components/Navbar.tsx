@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Fuel } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +23,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 text-teal-600 hover:text-teal-700 transition-colors">
-            <Fuel className="w-6 h-6 sm:w-8 sm:h-8" />
-            <span className="text-lg sm:text-xl font-bold">Fioul Excellence</span>
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <img 
+              src="https://i.imgur.com/07QFIbT.png" 
+              alt="Fioul Excellence" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

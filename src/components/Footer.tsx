@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Fuel, Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -11,8 +11,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <Fuel className="w-8 h-8 text-teal-400" />
-              <h3 className="text-xl font-bold">Fioul Excellence</h3>
+              <img 
+                src="https://i.imgur.com/07QFIbT.png" 
+                alt="Fioul Excellence" 
+                className="h-8 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400">
               Votre partenaire de confiance pour l'approvisionnement en fioul domestique partout en France.
