@@ -86,7 +86,7 @@ const PriceCalculator = () => {
           <div className="flex items-center justify-center space-x-2">
             <Zap className="w-5 h-5 text-yellow-500" />
             <h3 className="text-xl font-bold text-slate-800">
-              Sofort-Kalkulation
+              Calcul instantané
             </h3>
           </div>
         </div>
@@ -94,7 +94,7 @@ const PriceCalculator = () => {
         <div className="space-y-5">
           {/* Product Selection with enhanced styling */}
           <div className="space-y-3">
-            <label className="block text-sm font-bold text-slate-700">Wählen Sie Ihr Fioul</label>
+            <label className="block text-sm font-bold text-slate-700">Choisissez votre fioul</label>
             <div className="space-y-3">
               {Object.entries(heizölConfig.products).map(([key, prod]) => (
                 <motion.label 
@@ -126,7 +126,7 @@ const PriceCalculator = () => {
                           </div>
                           {key === 'premium' && (
                             <span className="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                              EMPFOHLEN
+                              RECOMMANDÉ
                             </span>
                           )}
                         </div>
@@ -140,9 +140,9 @@ const PriceCalculator = () => {
 
           {/* Enhanced Quantity Input */}
           <div className="space-y-3">
-            <label className="block text-sm font-bold text-slate-700">Benötigte Menge</label>
+            <label className="block text-sm font-bold text-slate-700">Quantité nécessaire</label>
             <div className="text-xs text-slate-500 bg-blue-50 p-2 rounded-lg">
-              💡 Mindestmenge: {heizölConfig.limits.minLiters}L • Kostenlose Lieferung ab 3000L
+              💡 Quantité minimum : {heizölConfig.limits.minLiters}L • Livraison gratuite dès 3000L
             </div>
             <motion.input
               type="number"
@@ -159,11 +159,11 @@ const PriceCalculator = () => {
           <div className="space-y-3">
             <label className="block text-sm font-bold text-slate-700">
               <MapPin className="w-4 h-4 inline mr-1" />
-              Lieferadresse (PLZ)
+              Adresse de livraison (Code postal)
             </label>
             <motion.input
               type="text"
-              placeholder="z.B. 75001"
+              placeholder="ex. 75001"
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
               className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 text-lg"
@@ -182,12 +182,12 @@ const PriceCalculator = () => {
             {isCalculating ? (
               <div className="flex items-center justify-center">
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                Berechnung läuft...
+                Calcul en cours...
               </div>
             ) : (
               <div className="flex items-center justify-center">
                 <Euro className="w-5 h-5 mr-2" />
-                Preis jetzt berechnen
+                Calculer le prix maintenant
               </div>
             )}
           </motion.button>
@@ -202,12 +202,12 @@ const PriceCalculator = () => {
             >
               {/* Savings highlight */}
               <div className="bg-green-500 text-white rounded-lg p-3 text-center font-bold">
-                🎉 Sie sparen ca. {savings}€ gegenüber lokalen Anbietern!
+                🎉 Vous économisez environ {savings}€ par rapport aux fournisseurs locaux !
               </div>
 
               <h4 className="font-bold text-slate-800 flex items-center text-lg">
                 <ShoppingCart className="w-5 h-5 mr-2 text-teal-600" />
-                Ihr persönliches Angebot
+                Votre devis personnalisé
               </h4>
               
               <div className="space-y-3 text-base">
@@ -218,13 +218,13 @@ const PriceCalculator = () => {
                 <div className="flex justify-between items-center">
                   <span className="flex items-center font-medium">
                     <Truck className="w-4 h-4 mr-1" />
-                    Express-Lieferung
-                    {deliveryFee === 0 && <span className="text-green-600 ml-2 text-sm font-bold bg-green-100 px-2 py-1 rounded-full">KOSTENLOS</span>}
+                    Livraison express
+                    {deliveryFee === 0 && <span className="text-green-600 ml-2 text-sm font-bold bg-green-100 px-2 py-1 rounded-full">GRATUITE</span>}
                   </span>
                   <span className="font-bold text-lg">{deliveryFee.toFixed(2)}€</span>
                 </div>
                 <div className="border-t-2 border-slate-200 pt-3 flex justify-between font-bold text-xl">
-                  <span>Gesamtpreis</span>
+                  <span>Prix total</span>
                   <span className="text-teal-600">{total.toFixed(2)}€</span>
                 </div>
               </div>
@@ -236,11 +236,11 @@ const PriceCalculator = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <ShoppingCart className="w-5 h-5" />
-                <span>Jetzt bestellen - 24h Lieferung</span>
+                <span>Commander maintenant - Livraison 2-4 jours</span>
               </motion.button>
               
               <div className="text-center text-sm text-slate-500">
-                ✓ Sichere Zahlung • ✓ Geld-zurück-Garantie • ✓ TÜV-geprüft
+                ✓ Paiement sécurisé • ✓ Garantie satisfait ou remboursé • ✓ Certifié TÜV
               </div>
             </motion.div>
           )}
