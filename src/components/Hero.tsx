@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500 rounded-full blur-xl"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-16">
+      <div className="relative z-10 container mx-auto px-4 py-8 pb-16">
         {/* Header */}
         <motion.header 
           initial={{ opacity: 0, y: -20 }}
