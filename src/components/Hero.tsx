@@ -15,13 +15,13 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content - Enhanced for conversion */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 text-center lg:text-left"
+            className="space-y-8 text-center lg:text-left"
           >
             {/* Trust badge */}
             <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-4 py-2 text-sm font-semibold text-green-700">
@@ -29,7 +29,7 @@ const Hero = () => {
               Plus de 100 000 clients satisfaits
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 <span className="text-slate-900 block">
                   Fioul Premium
@@ -51,12 +51,11 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Modern conversion-focused feature highlights */}
-            <div className="space-y-4 max-w-lg mx-auto lg:max-w-none">
-              {/* Quality guarantee with modern styling */}
-              <div className="group relative overflow-hidden bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-indigo-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative flex items-center justify-between">
+            {/* Modern conversion-focused feature highlights with more spacing */}
+            <div className="space-y-4 max-w-lg mx-auto lg:max-w-none mt-12">
+              {/* Quality guarantee with optimized styling */}
+              <div className="relative overflow-hidden bg-gradient-to-r from-blue-50/60 to-indigo-50/60 backdrop-blur-sm border border-blue-200/30 rounded-2xl p-4 transition-all duration-200 hover:shadow-lg hover:border-blue-300/50">
+                <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
                       <Shield className="w-5 h-5 text-white" />
@@ -72,10 +71,9 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Fast delivery with modern styling */}
-              <div className="group relative overflow-hidden bg-gradient-to-r from-teal-50/80 to-emerald-50/80 backdrop-blur-sm border border-teal-200/50 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-100/20 to-emerald-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative flex items-center justify-between">
+              {/* Fast delivery with optimized styling */}
+              <div className="relative overflow-hidden bg-gradient-to-r from-teal-50/60 to-emerald-50/60 backdrop-blur-sm border border-teal-200/30 rounded-2xl p-4 transition-all duration-200 hover:shadow-lg hover:border-teal-300/50">
+                <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center">
                       <Truck className="w-5 h-5 text-white" />
@@ -91,10 +89,9 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Best price guarantee with modern styling */}
-              <div className="group relative overflow-hidden bg-gradient-to-r from-orange-50/80 to-red-50/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-100/20 to-red-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative flex items-center justify-between">
+              {/* Best price guarantee with optimized styling */}
+              <div className="relative overflow-hidden bg-gradient-to-r from-orange-50/60 to-red-50/60 backdrop-blur-sm border border-orange-200/30 rounded-2xl p-4 transition-all duration-200 hover:shadow-lg hover:border-orange-300/50">
+                <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center">
                       <Fuel className="w-5 h-5 text-white" />
@@ -111,8 +108,8 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Trust elements */}
-            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 pt-4">
+            {/* Trust elements with more spacing */}
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 pt-8">
               <div className="flex items-center text-sm text-slate-600">
                 <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
                 Garantie satisfait ou remboursé
