@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ProductComparison from '../components/ProductComparison';
 import Services from '../components/Services';
@@ -14,15 +15,18 @@ import Footer from '../components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Hero />
-      <ProductComparison />
-      <Services />
-      <Benefits />
-      <OrderProcess />
-      <Environmental />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <Navbar />
+      <div className="pt-16">
+        <Hero />
+        <ProductComparison />
+        <Services />
+        <Benefits />
+        <OrderProcess />
+        <Environmental />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };
