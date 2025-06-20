@@ -66,10 +66,10 @@ const PolitiqueCookies = () => {
 
             <h3 className="text-lg font-semibold mb-2">Configuration par navigateur</h3>
             <div className="bg-gray-50 p-4 rounded-lg mb-4">
-              <p><strong>Chrome :</strong> Menu > Paramètres > Avancés > Confidentialité et sécurité > Paramètres du site > Cookies</p>
-              <p><strong>Firefox :</strong> Menu > Options > Vie privée et sécurité > Cookies et données de sites</p>
-              <p><strong>Safari :</strong> Préférences > Confidentialité > Cookies et données de sites web</p>
-              <p><strong>Edge :</strong> Menu > Paramètres > Cookies et autorisations de site</p>
+              <p><strong>Chrome :</strong> Menu &gt; Paramètres &gt; Avancés &gt; Confidentialité et sécurité &gt; Paramètres du site &gt; Cookies</p>
+              <p><strong>Firefox :</strong> Menu &gt; Options &gt; Vie privée et sécurité &gt; Cookies et données de sites</p>
+              <p><strong>Safari :</strong> Préférences &gt; Confidentialité &gt; Cookies et données de sites web</p>
+              <p><strong>Edge :</strong> Menu &gt; Paramètres &gt; Cookies et autorisations de site</p>
             </div>
 
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">4. Outils de désactivation</h2>
