@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Users, Clock, Leaf, Award, Heart } from 'lucide-react';
@@ -86,7 +85,7 @@ const APropos = () => {
                 client exceptionnel et des délais de livraison respectés dans toute la France.
               </p>
               <Link
-                to="/contact"
+                to="/#hero"
                 className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 <span>Obtenir un devis gratuit</span>

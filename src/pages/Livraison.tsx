@@ -129,13 +129,15 @@ const Livraison = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="text-center"
               >
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-12 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"
-                >
-                  Calculer le prix maintenant
-                </motion.button>
+                <Link to="/#hero">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-12 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"
+                  >
+                    Calculer le prix maintenant
+                  </motion.button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
