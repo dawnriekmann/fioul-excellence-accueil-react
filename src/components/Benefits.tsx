@@ -15,68 +15,79 @@ const Benefits = () => {
       title: "Économies garanties",
       description: "Jusqu'à 15% d'économies par rapport aux stations traditionnelles",
       stats: "15% d'économies",
-      color: "from-green-400 to-green-600"
+      gradient: "from-green-500 via-emerald-500 to-teal-500"
     },
     {
       icon: Truck,
       title: "Livraison gratuite",
       description: "Livraison offerte dès 3000L commandés partout en France",
       stats: "Dès 3000L",
-      color: "from-blue-400 to-blue-600"
+      gradient: "from-blue-500 via-cyan-500 to-teal-500"
     },
     {
       icon: Smartphone,
       title: "Commande en ligne",
       description: "Interface intuitive pour commander en quelques clics",
       stats: "24/7 disponible",
-      color: "from-teal-400 to-teal-600"
+      gradient: "from-purple-500 via-violet-500 to-blue-500"
     },
     {
       icon: Award,
       title: "Qualité premium",
       description: "Fioul de haute qualité avec additifs anti-gel inclus",
       stats: "Certifié ISO",
-      color: "from-purple-400 to-purple-600"
+      gradient: "from-orange-500 via-red-500 to-pink-500"
     }
   ];
 
   return (
-    <section ref={ref} className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-white via-slate-50 to-blue-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-4">
             Des avantages qui font la différence
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Profitez d'un service sur-mesure avec des bénéfices concrets pour votre budget et votre confort
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.05 }}
-              className="relative overflow-hidden"
+              className="group relative overflow-hidden"
             >
-              <div className={`bg-gradient-to-br ${benefit.color} rounded-2xl p-6 text-white h-full shadow-xl min-h-[250px] flex flex-col justify-center`}>
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="bg-white bg-opacity-20 rounded-full p-4">
-                    <benefit.icon className="w-7 h-7 sm:w-8 sm:h-8" />
+              {/* Glassmorphism Card */}
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-xl rounded-3xl"></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-10 group-hover:opacity-20 rounded-3xl transition-opacity duration-500`}></div>
+              <div className="absolute inset-0 rounded-3xl shadow-xl shadow-slate-200/30 group-hover:shadow-2xl group-hover:shadow-slate-300/40 transition-all duration-500"></div>
+
+              <div className="relative p-8 flex flex-col items-center text-center space-y-6 min-h-[300px] justify-center">
+                {/* Icon with animated background */}
+                <div className="relative">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${benefit.gradient} rounded-2xl blur-lg opacity-30 group-hover:opacity-50 scale-150 transition-all duration-500`}></div>
+                  <div className={`relative w-20 h-20 bg-gradient-to-r ${benefit.gradient} rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <benefit.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold">{benefit.title}</h3>
-                  <p className="text-sm opacity-90 leading-relaxed">{benefit.description}</p>
-                  <div className="bg-white bg-opacity-20 rounded-full px-4 py-2 text-sm font-semibold">
-                    {benefit.stats}
-                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-slate-800">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{benefit.description}</p>
+                </div>
+                
+                <div className={`px-6 py-3 bg-gradient-to-r ${benefit.gradient} text-white rounded-full text-sm font-bold shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+                  {benefit.stats}
                 </div>
               </div>
             </motion.div>
