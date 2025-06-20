@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { CheckCircle, Star, Fuel, Zap, Shield, Award } from 'lucide-react';
+import { CheckCircle, Star, Fuel, Zap, Shield, Award, TruckIcon, Euro, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
@@ -13,46 +14,76 @@ const Produits = () => {
   const products = [
     {
       name: "Fioul Standard",
-      price: "0,70€",
+      price: "0,68",
       description: "Fioul de qualité pour un usage quotidien",
       icon: Fuel,
       color: "from-blue-500 to-blue-600",
       features: [
         "Qualité certifiée selon normes européennes",
         "Prix compétitif garanti",
-        "Livraison rapide 24-48h",
-        "Service client 7j/7",
-        "Garantie qualité 1 an",
-        "Stockage optimisé"
+        "Livraison rapide 2-4 jours",
+        "Service client 7j/7"
       ],
-      specifications: [
-        { label: "Densité", value: "0.82-0.95 kg/L" },
-        { label: "Point d'éclair", value: "> 55°C" },
-        { label: "Soufre", value: "< 1000 mg/kg" },
-        { label: "Cendres", value: "< 0.01%" }
-      ]
+      popular: false,
+      gradient: "from-blue-50/80 to-indigo-50/80",
+      border: "border-blue-200/50",
+      accent: "bg-blue-600"
     },
     {
       name: "Fioul Premium",
-      price: "0,73€",
-      description: "Fioul haut de gamme enrichi avec des additifs",
+      price: "0,72",
+      description: "Notre meilleure qualité avec additifs",
       icon: Star,
       color: "from-teal-500 to-teal-600",
       popular: true,
       features: [
         "Additifs anti-gel inclus (-15°C)",
-        "Rendement optimisé +8%",
+        "Rendement optimisé +10%",
         "Protection complète du système",
-        "Garantie étendue 3 ans",
-        "Anti-corrosion et anti-mousse",
-        "Biocide préventif inclus"
+        "Garantie étendue 3 ans"
       ],
-      specifications: [
-        { label: "Densité", value: "0.82-0.95 kg/L" },
-        { label: "Point d'éclair", value: "> 55°C" },
-        { label: "Soufre", value: "< 500 mg/kg" },
-        { label: "Additifs", value: "Multi-fonctions" }
-      ]
+      gradient: "from-teal-50/80 to-emerald-50/80",
+      border: "border-teal-200/50",
+      accent: "bg-teal-600"
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Euro,
+      title: "Économisez jusqu'à 15%",
+      description: "Prix garantis moins chers que les fournisseurs locaux",
+      highlight: "Économies immédiates",
+      gradient: "from-green-50/80 to-emerald-50/80",
+      border: "border-green-200/50",
+      accent: "bg-green-600"
+    },
+    {
+      icon: TruckIcon,
+      title: "Livraison express",
+      description: "Livraison rapide dans toute la France sous 2-4 jours",
+      highlight: "2-4 jours",
+      gradient: "from-blue-50/80 to-indigo-50/80",
+      border: "border-blue-200/50",
+      accent: "bg-blue-600"
+    },
+    {
+      icon: Shield,
+      title: "Certifié TÜV",
+      description: "Qualité maximale contrôlée selon les normes européennes",
+      highlight: "100% sûr",
+      gradient: "from-teal-50/80 to-cyan-50/80",
+      border: "border-teal-200/50",
+      accent: "bg-teal-600"
+    },
+    {
+      icon: Clock,
+      title: "Service 24/7",
+      description: "Commandez 24h/24 avec un support professionnel",
+      highlight: "Toujours là",
+      gradient: "from-purple-50/80 to-violet-50/80",
+      border: "border-purple-200/50",
+      accent: "bg-purple-600"
     }
   ];
 
@@ -60,116 +91,200 @@ const Produits = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <div className="pt-16">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-teal-50 to-blue-50">
-          <div className="container mx-auto px-4">
+        {/* Section 1: Nos Fioul Premium */}
+        <section className="py-20 bg-gradient-to-br from-teal-50 to-blue-50 relative overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-teal-200/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/10 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h1 className="text-5xl font-bold text-gray-800 mb-6">
-                Nos Produits Fioul
+              <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                Nos Fioul Premium
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Découvrez notre gamme de fioul domestique de haute qualité, adaptée à tous vos besoins de chauffage
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Deux qualités premium pour répondre à tous vos besoins de chauffage en France
               </p>
             </motion.div>
-          </div>
-        </section>
 
-        {/* Product Comparison */}
-        <section ref={ref} className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {products.map((product, index) => (
                 <motion.div
-                  key={index}
+                  key={product.name}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className={`relative bg-white rounded-2xl shadow-xl p-8 ${product.popular ? 'ring-2 ring-teal-500 scale-105' : ''}`}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative"
                 >
+                  {/* Popular badge */}
                   {product.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-teal-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
-                        <Award className="w-4 h-4" />
-                        <span>Plus populaire</span>
-                      </span>
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg flex items-center">
+                        <Star className="w-4 h-4 mr-2 fill-current" />
+                        PLUS POPULAIRE
+                      </div>
                     </div>
                   )}
 
-                  <div className="text-center mb-8">
-                    <div className={`w-20 h-20 bg-gradient-to-r ${product.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                      <product.icon className="w-10 h-10 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold text-gray-800 mb-2">{product.name}</h3>
-                    <p className="text-gray-600 mb-4">{product.description}</p>
-                    <div className="text-4xl font-bold text-gray-800">
-                      {product.price}
-                      <span className="text-lg text-gray-600 font-normal">/litre</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 mb-8">
-                    <h4 className="text-lg font-semibold text-gray-800 flex items-center">
-                      <Shield className="w-5 h-5 mr-2 text-teal-600" />
-                      Avantages
-                    </h4>
-                    {product.features.map((feature, i) => (
-                      <div key={i} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{feature}</span>
+                  {/* Modern card design */}
+                  <div className={`group relative overflow-hidden bg-gradient-to-br ${product.gradient} backdrop-blur-sm border-2 ${product.border} rounded-3xl p-8 space-y-6 hover:shadow-2xl transition-all duration-300 ${product.popular ? 'scale-105 shadow-xl' : ''}`}>
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Header */}
+                      <div className="text-center space-y-4">
+                        <div className={`w-16 h-16 ${product.accent} rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
+                          <product.icon className="w-8 h-8 text-white" />
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                            {product.name}
+                          </h3>
+                          <p className="text-slate-600">
+                            {product.description}
+                          </p>
+                        </div>
+                        
+                        {/* Price */}
+                        <div className="space-y-2">
+                          <div className="text-4xl font-bold text-slate-900">
+                            {product.price}€
+                            <span className="text-lg font-normal text-slate-600">/L</span>
+                          </div>
+                          <div className="text-sm text-slate-500">
+                            Prix TTC par litre
+                          </div>
+                        </div>
                       </div>
-                    ))}
-                  </div>
 
-                  <div className="space-y-4 mb-8">
-                    <h4 className="text-lg font-semibold text-gray-800 flex items-center">
-                      <Zap className="w-5 h-5 mr-2 text-teal-600" />
-                      Spécifications techniques
-                    </h4>
-                    {product.specifications.map((spec, i) => (
-                      <div key={i} className="flex justify-between py-2 border-b border-gray-100">
-                        <span className="text-gray-600">{spec.label}</span>
-                        <span className="font-medium text-gray-800">{spec.value}</span>
+                      {/* Features */}
+                      <div className="space-y-4">
+                        <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                        
+                        <ul className="space-y-3">
+                          {product.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-center space-x-3">
+                              <div className={`w-6 h-6 ${product.accent} rounded-full flex items-center justify-center flex-shrink-0`}>
+                                <CheckCircle className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-slate-700 font-medium">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    ))}
-                  </div>
 
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
-                      product.popular 
-                        ? 'bg-gradient-to-r from-teal-600 to-blue-600 text-white shadow-lg hover:shadow-xl'
-                        : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                    }`}
+                      {/* CTA Button */}
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`w-full py-4 bg-gradient-to-r ${product.popular ? 'from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700' : 'from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'} text-white font-bold rounded-xl transition-all duration-200 shadow-lg`}
+                      >
+                        Choisir ce fioul
+                      </motion.button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Pourquoi choisir notre fioul ? */}
+        <section ref={ref} className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-teal-200/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/10 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                Pourquoi choisir notre fioul ?
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Plus de 100 000 clients satisfaits font confiance à notre qualité et notre service
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+              {whyChooseUs.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div 
+                    className={`relative overflow-hidden bg-gradient-to-br ${feature.gradient} backdrop-blur-sm border-2 ${feature.border} rounded-3xl p-8 text-center space-y-6 hover:shadow-2xl transition-all duration-300 h-full`}
                   >
-                    Commander ce produit
-                  </motion.button>
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className={`w-20 h-20 ${feature.accent} rounded-2xl flex items-center justify-center mx-auto shadow-lg mb-6`}>
+                        <feature.icon className="w-10 h-10 text-white" />
+                      </div>
+                      
+                      {/* Badge */}
+                      <div className={`inline-block ${feature.accent} text-white px-4 py-2 rounded-full text-sm font-bold mb-4`}>
+                        {feature.highlight}
+                      </div>
+                      
+                      {/* Title & Description */}
+                      <div className="space-y-3">
+                        <h3 className="text-2xl font-bold text-slate-900">
+                          {feature.title}
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Additional Info */}
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-16 bg-gradient-to-r from-teal-50 to-blue-50 rounded-2xl p-8 text-center"
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-center mt-16"
             >
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Besoin d'aide pour choisir ?</h3>
-              <p className="text-gray-600 mb-6">
-                Nos experts sont là pour vous conseiller et vous aider à choisir le produit le mieux adapté à vos besoins
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-12 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"
               >
-                <span>Contactez nos experts</span>
-              </Link>
+                Calculer le prix maintenant
+              </motion.button>
+              
+              <div className="inline-flex items-center bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl px-6 py-4 text-slate-600 shadow-lg mt-8">
+                <Shield className="w-5 h-5 mr-3 text-teal-600" />
+                <span className="font-semibold">
+                  Garantie qualité TÜV • Livraison en France • Support 7j/7
+                </span>
+              </div>
             </motion.div>
           </div>
         </section>
