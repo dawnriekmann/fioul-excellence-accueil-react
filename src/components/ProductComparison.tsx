@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Star, Zap, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ProductComparison = () => {
   const products = [
@@ -128,13 +129,15 @@ const ProductComparison = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`w-full py-4 bg-gradient-to-r ${product.popular ? 'from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700' : 'from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'} text-white font-bold rounded-xl transition-all duration-200 shadow-lg`}
-                  >
-                    Choisir ce fioul
-                  </motion.button>
+                  <a href="#hero">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`w-full py-4 bg-gradient-to-r ${product.popular ? 'from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700' : 'from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'} text-white font-bold rounded-xl transition-all duration-200 shadow-lg`}
+                    >
+                      Choisir ce fioul
+                    </motion.button>
+                  </a>
                 </div>
               </div>
             </motion.div>
