@@ -46,8 +46,8 @@ const ContactPage = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Section unique - Contact */}
-      <section ref={ref} className="pt-16 py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      {/* Section unique - Contact avec plus d'espace */}
+      <section ref={ref} className="pt-20 py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-[90vh]">
         {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl"></div>
@@ -56,14 +56,14 @@ const ContactPage = () => {
         </div>
 
         <div className="relative z-10 container mx-auto px-4">
-          {/* Hero intégré */}
+          {/* Hero intégré avec plus d'espace */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-8">
               <span className="text-slate-900 block">
                 Contactez
               </span>
@@ -77,8 +77,8 @@ const ContactPage = () => {
             </p>
           </motion.div>
 
-          {/* Cartes de contact principales */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* Cartes de contact principales avec plus d'espace */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((contact, index) => (
               <motion.div
                 key={index}
@@ -86,43 +86,43 @@ const ContactPage = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="relative overflow-hidden bg-white/60 backdrop-blur-sm border border-blue-200/30 rounded-2xl p-6 text-center transition-all duration-200 hover:shadow-lg hover:border-blue-300/50"
+                className="relative overflow-hidden bg-white/60 backdrop-blur-sm border border-blue-200/30 rounded-2xl p-8 text-center transition-all duration-200 hover:shadow-lg hover:border-blue-300/50"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <contact.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{contact.title}</h3>
-                <p className="text-xl font-semibold text-teal-600 mb-1">{contact.info}</p>
-                <p className="text-sm font-medium text-slate-700 mb-1">{contact.description}</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">{contact.title}</h3>
+                <p className="text-xl font-semibold text-teal-600 mb-2">{contact.info}</p>
+                <p className="text-sm font-medium text-slate-700 mb-2">{contact.description}</p>
                 <p className="text-xs text-slate-600">{contact.detail}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Call-to-action principal */}
+          {/* Call-to-action principal avec plus d'espace */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center"
           >
-            <div className="relative overflow-hidden bg-white/80 backdrop-blur-sm border border-teal-200/30 rounded-3xl shadow-xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
+            <div className="relative overflow-hidden bg-white/80 backdrop-blur-sm border border-teal-200/30 rounded-3xl shadow-xl p-10 max-w-2xl mx-auto">
+              <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
                 Une question ? Un devis personnalisé ?
               </h3>
-              <p className="text-lg text-slate-600 mb-8">
+              <p className="text-lg text-slate-600 mb-10">
                 Contactez nos experts pour un conseil personnalisé et obtenez le meilleur prix pour votre fioul
               </p>
               <motion.a
                 href="tel:0123456789"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center space-x-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="inline-flex items-center space-x-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-10 py-5 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Phone className="w-6 h-6" />
                 <span>Appelez-nous maintenant</span>
               </motion.a>
-              <div className="mt-4 text-sm text-slate-500">
+              <div className="mt-6 text-sm text-slate-500">
                 Appel gratuit • Réponse immédiate
               </div>
             </div>
